@@ -1,0 +1,395 @@
+# Verilog Task 1 — Sumerix Global Internship
+
+A collection of Verilog HDL design and simulation exercises completed as part of **Task 1 of the Sumerix Global Internship**.
+
+The repository demonstrates fundamental digital design concepts using **Verilog HDL**, along with testbenches, simulation outputs, waveform files, and verification screenshots.
+
+## Overview
+
+This task focuses on developing practical skills in:
+
+* Verilog HDL
+* Digital logic design
+* Combinational circuit modeling
+* Arithmetic circuit design
+* Multiplexer implementation
+* Ripple-carry addition
+* Testbench development
+* Functional simulation
+* Waveform analysis
+* Linux command-line workflow
+* Organizing HDL source and simulation files
+
+The repository follows a simple **source → testbench → simulation → verification** workflow.
+
+---
+
+## Repository Structure
+
+```text
+Task-1-for-Sumerix-Global-Internnship/
+│
+├── README.md
+│
+└── Verilog_TASK_1/
+    │
+    ├── PRAC_1 Source files/
+    │   ├── logic_gates.v
+    │   ├── logic_gate_tb.v
+    │   ├── logic_gates.vcd
+    │   └── logic_gates.vvp
+    │
+    ├── Prac_1 outputs/
+    │   └── Simulation screenshots
+    │
+    ├── Prac_2 Source code/
+    │   ├── adders.v
+    │   ├── adders_tb.v
+    │   ├── adders.vcd
+    │   └── adders.vvp
+    │
+    ├── Prac_2 outputs/
+    │   └── Simulation screenshots
+    │
+    ├── Prac_3 Source files/
+    │   ├── MUX.v
+    │   ├── MUX_tb.v
+    │   ├── MUX.vcd
+    │   └── MUX.vvp
+    │
+    ├── Prac_3 outputs/
+    │   └── Simulation outputs
+    │
+    ├── Prac_4 Source files/
+    │   ├── 4_bit_rac.v
+    │   ├── 4_bit_rac_tb.v
+    │   ├── 4_bit_rac.vcd
+    │   └── 4_bit_rac.vvp
+    │
+    ├── Prac_4 outputs/
+    │   └── Simulation outputs
+    │
+    ├── Prac_5/
+    │   └── Practice 5.pdf
+    │
+    ├── Prac_7 src files/
+    │   ├── N_bit_addr.v
+    │   ├── N_bit_addr_tb.v
+    │   ├── N_bit_addr.vcd
+    │   └── N_bit_addr.vvp
+    │
+    └── Prac_7 outputs/
+        └── Simulation outputs
+```
+
+The repository structure and filenames correspond to the files currently present in the GitHub repository.
+
+---
+
+## Practices
+
+### Practice 1 — Logic Gates
+
+Implementation and simulation of fundamental digital logic gates using Verilog HDL.
+
+**Files:**
+
+* `logic_gates.v` — Design module
+* `logic_gate_tb.v` — Testbench
+* `logic_gates.vcd` — Generated waveform
+* `logic_gates.vvp` — Compiled simulation output
+
+The corresponding output directory contains screenshots of the simulation results.
+
+**Concepts covered:**
+
+* AND
+* OR
+* NOT
+* NAND
+* NOR
+* XOR
+* XNOR
+* Verilog module structure
+* Testbench-based verification
+
+---
+
+### Practice 2 — Adders
+
+Implementation and verification of adder circuits using Verilog HDL.
+
+**Files:**
+
+* `adders.v` — Adder design
+* `adders_tb.v` — Testbench
+* `adders.vcd` — Simulation waveform
+* `adders.vvp` — Compiled simulation output
+
+The output folder contains screenshots generated during simulation.
+
+**Concepts covered:**
+
+* Binary addition
+* Half-adder/full-adder concepts
+* Combinational logic
+* Testbench stimulus
+* Simulation-based verification
+
+---
+
+### Practice 3 — Multiplexer
+
+Implementation and simulation of a multiplexer using Verilog HDL.
+
+**Files:**
+
+* `MUX.v` — Multiplexer design
+* `MUX_tb.v` — Testbench
+* `MUX.vcd` — Simulation waveform
+* `MUX.vvp` — Compiled simulation output
+
+**Concepts covered:**
+
+* Multiplexer operation
+* Select lines
+* Combinational logic
+* Behavioral/dataflow modeling
+* Testbench verification
+
+---
+
+### Practice 4 — 4-Bit Ripple Carry Adder
+
+Implementation of a **4-bit ripple-carry adder** and its corresponding testbench.
+
+**Files:**
+
+* `4_bit_rac.v` — RTL design
+* `4_bit_rac_tb.v` — Testbench
+* `4_bit_rac.vcd` — Simulation waveform
+* `4_bit_rac.vvp` — Compiled simulation output
+
+**Concepts covered:**
+
+* Full-adder chaining
+* Carry propagation
+* Multi-bit arithmetic
+* Hierarchical/combinational design
+* Functional verification
+
+---
+
+### Practice 5 — Practice Document
+
+Practice 5 is currently maintained as a PDF document:
+
+```text
+Prac_5/
+└── Practice 5.pdf
+```
+
+This keeps the original practice material associated with the internship task.
+
+---
+
+### Practice 7 — Parameterized N-Bit Adder
+
+Implementation of a parameterized N-bit adder using Verilog HDL.
+
+**Files:**
+
+* `N_bit_addr.v` — Parameterized adder design
+* `N_bit_addr_tb.v` — Testbench
+* `N_bit_addr.vcd` — Simulation waveform
+* `N_bit_addr.vvp` — Compiled simulation output
+
+The design is parameterized so that the bit width can be modified without rewriting the RTL.
+
+For example:
+
+```verilog
+module nbit_adder #(
+    parameter N = 4
+)(
+    input  [N-1:0] A,
+    input  [N-1:0] B,
+    input          Cin,
+    output [N-1:0] Sum,
+    output         Cout
+);
+```
+
+**Concepts covered:**
+
+* Parameterized Verilog modules
+* Vector signals
+* Carry-in and carry-out
+* Scalable RTL design
+* Reusable hardware modules
+* Testbench-based verification
+
+---
+
+## Simulation Workflow
+
+The designs can be simulated using **Icarus Verilog**.
+
+### 1. Install Icarus Verilog
+
+On Ubuntu:
+
+```bash
+sudo apt update
+sudo apt install iverilog gtkwave
+```
+
+Verify the installation:
+
+```bash
+iverilog -V
+gtkwave --version
+```
+
+---
+
+### 2. Compile the Design
+
+For example, for Practice 7:
+
+```bash
+iverilog -o N_bit_addr.vvp N_bit_addr.v N_bit_addr_tb.v
+```
+
+---
+
+### 3. Run the Simulation
+
+```bash
+vvp N_bit_addr.vvp
+```
+
+If the testbench generates a VCD waveform file, it can be viewed using:
+
+```bash
+gtkwave N_bit_addr.vcd
+```
+
+The same workflow can be applied to the other Verilog exercises.
+
+---
+
+## Source and Testbench Methodology
+
+Each major Verilog exercise is organized around two primary files:
+
+### Design File
+
+Contains the actual RTL/hardware description.
+
+```text
+design.v
+```
+
+### Testbench
+
+Provides stimulus to the design under test (DUT), monitors outputs, and verifies functionality.
+
+```text
+design_tb.v
+```
+
+The general simulation flow is:
+
+```text
+       Verilog RTL
+           │
+           ▼
+      Testbench
+           │
+           ▼
+     Icarus Verilog
+           │
+           ▼
+      Simulation
+           │
+      ┌────┴────┐
+      ▼         ▼
+    .vvp       .vcd
+      │         │
+      │         ▼
+      │      GTKWave
+      │
+      ▼
+ Simulation Results
+```
+
+---
+
+## Tools Used
+
+| Tool               | Purpose                                         |
+| ------------------ | ----------------------------------------------- |
+| **Verilog HDL**    | Hardware description and RTL design             |
+| **Icarus Verilog** | Verilog compilation and simulation              |
+| **GTKWave**        | Waveform visualization                          |
+| **Ubuntu/Linux**   | Command-line development environment            |
+| **Git**            | Version control                                 |
+| **GitHub**         | Repository management and project documentation |
+
+---
+
+## Key Learning Outcomes
+
+Through these exercises, the following skills were developed:
+
+* Writing synthesizable Verilog modules
+* Understanding digital logic at RTL level
+* Designing combinational circuits
+* Creating reusable parameterized modules
+* Writing Verilog testbenches
+* Compiling and running simulations from the Linux terminal
+* Generating and inspecting VCD waveforms
+* Debugging RTL through simulation
+* Organizing source code and generated outputs
+* Using Git and GitHub for version-controlled HDL projects
+
+---
+
+## Verification
+
+The repository includes both:
+
+* **Simulation source files** — Verilog designs and testbenches
+* **Simulation evidence** — waveform files and screenshots
+
+This makes it possible to inspect not only the RTL implementation but also the resulting simulation behavior.
+
+---
+
+## Internship Context
+
+**Program:** Sumerix Global Internship
+**Task:** Task 1
+**Domain:** Digital Design / Verilog HDL
+**Focus:** Verilog fundamentals, RTL design, simulation, and verification
+
+---
+
+## Author
+
+**Alysha Ahmed**
+
+Electronics & Communication Engineering
+Assam Engineering College
+
+---
+
+## Repository
+
+[Task-1-for-Sumerix-Global-Internnship on GitHub](https://github.com/Alysha-pixel/Task-1-for-Sumerix-Global-Internnship?utm_source=chatgpt.com)
+
+---
+
+
+ 
