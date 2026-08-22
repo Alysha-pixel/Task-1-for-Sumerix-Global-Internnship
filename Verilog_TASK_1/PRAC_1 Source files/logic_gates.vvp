@@ -1,0 +1,63 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "14.0 (devel)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002AE233B4C90 .scope module, "stimulus" "stimulus" 2 4;
+ .timescale -12 -12;
+v000002AE2338D280_0 .var "A", 0 0;
+v000002AE2338D320_0 .var "B", 0 0;
+v000002AE2338D3C0_0 .net "Y", 0 0, L_000002AE2338D460;  1 drivers
+S_000002AE2338D050 .scope module, "xn1" "xnor_gate" 2 16, 3 53 0, S_000002AE233B4C90;
+ .timescale -12 -12;
+    .port_info 0 /OUTPUT 1 "y";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_000002AE233B4B60 .functor XOR 1, v000002AE2338D280_0, v000002AE2338D320_0, C4<0>, C4<0>;
+L_000002AE2338D460 .functor NOT 1, L_000002AE233B4B60, C4<0>, C4<0>, C4<0>;
+v000002AE233B4E20_0 .net *"_ivl_0", 0 0, L_000002AE233B4B60;  1 drivers
+v000002AE233C72D0_0 .net "a", 0 0, v000002AE2338D280_0;  1 drivers
+v000002AE233B4AC0_0 .net "b", 0 0, v000002AE2338D320_0;  1 drivers
+v000002AE2338D1E0_0 .net "y", 0 0, L_000002AE2338D460;  alias, 1 drivers
+    .scope S_000002AE233B4C90;
+T_0 ;
+    %vpi_call 2 22 "$monitor", $time, " A=%b, B=%b, Y=%b", v000002AE2338D280_0, v000002AE2338D320_0, v000002AE2338D3C0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002AE2338D280_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002AE2338D320_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002AE2338D280_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002AE2338D320_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002AE2338D280_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002AE2338D320_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002AE2338D280_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002AE2338D320_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call 2 31 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_000002AE233B4C90;
+T_1 ;
+    %vpi_call 2 35 "$dumpfile", "logic_gates.vcd" {0 0 0};
+    %vpi_call 2 36 "$dumpvars", 32'sb00000000000000000000000000000000, S_000002AE233B4C90 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    ".\logic_gate_tb.v";
+    "./logic_gates.v";

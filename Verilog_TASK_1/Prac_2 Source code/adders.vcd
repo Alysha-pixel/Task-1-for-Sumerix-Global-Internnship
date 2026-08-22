@@ -1,0 +1,62 @@
+$date
+	Wed Aug 19 10:26:17 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module stimulus $end
+$var wire 1 ! S $end
+$var wire 1 " COUT $end
+$var reg 1 # A $end
+$var reg 1 $ B $end
+$var reg 1 % CIN $end
+$scope module f1 $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 % cin $end
+$var wire 1 " cout $end
+$var wire 1 ! s $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0%
+0$
+0#
+0"
+0!
+$end
+#5
+1!
+1%
+#10
+0%
+1$
+#15
+1"
+0!
+1%
+#20
+0"
+1!
+0%
+0$
+1#
+#25
+1"
+0!
+1%
+#30
+0%
+1$
+#35
+1!
+1%
+#40
