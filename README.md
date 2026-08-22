@@ -1,1 +1,0 @@
-# Task-1-for-Sumerix-Global-Internnship
